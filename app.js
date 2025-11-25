@@ -6,8 +6,11 @@ app.use(express.urlencoded({ extended: true }));
 
 const adminRoutes = require("./routes/admin.js");
 
-app.use(adminRoutes);
+app.use("/admin", adminRoutes);
 
+app.use((req, res, next) => {
+  res.status(404).send("<p>Page not Found<p>");
+});
 app.listen(3000, () => {
   console.log("Server has started on ");
 });

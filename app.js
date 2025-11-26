@@ -6,6 +6,9 @@ const path = require("path");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// serve public folder as static
+app.use(express.static(path.join(__dirname, "public")));
+
 const adminRoutes = require("./routes/admin.js");
 
 const shopRoutes = require("./routes/shop.js");

@@ -1,0 +1,13 @@
+main {
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main h1 {
+  font-size: 80px;
+  color: red;
+}
+h1::after {
+  content: "!";
+}

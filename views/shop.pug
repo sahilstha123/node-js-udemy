@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title #{title}
+        link(rel="stylesheet", href="/css/main.css")
+        link(rel="stylesheet", href="/css/shop.css")
+    body
+        // nav bar section
+        .navbar
+            a.active(href="/") Home
+            a.active(href="/admin/add-product") Add Product
+
+        // This is the main section
+        .main-content
+            h2 My Product List
+
+            .products-container
+                each product in products
+                    .card
+                        img(src=product.image, alt=product.name)
+                        h3= product.name
+                        p.price= product.price
+                        button Add to Cart

@@ -13,7 +13,7 @@ const adminRoutes = require("./routes/admin.js");
 
 const shopRoutes = require("./routes/shop.js");
 
-app.use("/admin", adminRoutes);
+app.use("/admin", adminRoutes.router);
 app.use(shopRoutes);
 
 app.use((req, res, next) => {

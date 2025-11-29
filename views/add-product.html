@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Product</title>
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/add-product.css">
-
 </head>
-
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/">Shop</a></li>
-                <li><a href="/admin/add-product">Add Product</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="/" class="active">Home</a>
+        <a href="/admin/add-product">Add Product</a>
+    </div>
 
-    <main>
-        <h2>Add New Product</h2>
-        <form action="/admin/add-product" method="post">
-            <input type="text" name="title" placeholder="Enter product name" required>
-            <button type="submit">Add Product</button>
+    <!-- Main Content -->
+    <div class="main-content">
+        <h1>Add New Product</h1>
+
+        <form action="/add-product" method="POST" class="product-form">
+            <label>Product Name</label>
+            <input type="text" name="name" placeholder="Enter product name" required>
+
+            <label>Price ($)</label>
+            <input type="number" name="price" placeholder="Enter product price" step="0.01" required>
+
+            <label>Description</label>
+            <textarea name="description" placeholder="Enter product description"></textarea>
+
+            <button type="submit" class="btn">Add Product</button>
         </form>
-    </main>
+    </div>
 </body>
-
 </html>

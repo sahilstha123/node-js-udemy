@@ -38,4 +38,9 @@ button {
     color: #fff;
     border-radius: 5px;
 }
+h1{
+    text-align: center;
+    color: red;
+    margin: 20px;
+}
 

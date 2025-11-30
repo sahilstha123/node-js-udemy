@@ -1,0 +1,32 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        link(rel="stylesheet", href="/css/main.css")
+        link(rel="stylesheet", href="/css/add-product.css")
+    body
+        //- <!-- Navbar -->
+        .navbar
+            a.active(href="/") Home
+            a(href="/admin/add-product") Add Product
+    
+
+        //- <!-- Main Content -->
+        .main-content
+            h1 Add New Product
+
+            form(action="/admin/add-product" method="POST" class="product-form")
+                label Product Name
+                input(type="text" name="name" placeholder="Enter product name" required)
+
+                label Price ($)
+                input(type="number" name="price" placeholder="Enter product price" step="0.01" required)
+
+                label Description
+                textarea(name="description" placeholder="Enter product description")
+
+                button(type="submit" class="btn") Add Product
+        
+  

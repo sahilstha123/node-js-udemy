@@ -13,14 +13,17 @@ html(lang="en")
             a.active(href="/admin/add-product") Add Product
 
         // This is the main section
-        .main-content
-            h2 My Product List
+        if prods.length>0
+            .main-content
+                h2 My Product List
 
-            .products-container
-                each product in prods
-                    .card
-                        img(src="https://cdn.pixabay.com/photo/2016/11/19/16/01/audio-1840073_1280.jpg", alt="headphone")
-                        h3= product.name
-                        p.price= product.price
-                        p= product.description
-                        button Add to Cart
+                .products-container
+                    each product in prods
+                        .card
+                            img(src="https://cdn.pixabay.com/photo/2016/11/19/16/01/audio-1840073_1280.jpg", alt="headphone")
+                            h3= product.name
+                            p.price= product.price
+                            p= product.description
+                            button Add to Cart
+        else 
+            h1 No Products available!                   

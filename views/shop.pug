@@ -1,29 +1,20 @@
-doctype html
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title #{title}
-        link(rel="stylesheet", href="/css/main.css")
-        link(rel="stylesheet", href="/css/shop.css")
-    body
-        // nav bar section
-        .navbar
-            a.active(href="/") Home
-            a.active(href="/admin/add-product") Add Product
+extends layouts/main-layout.pug
 
-        // This is the main section
-        if prods.length>0
-            .main-content
-                h2 My Product List
+block styles
+  link(rel="stylesheet", href="/css/shop.css")
 
-                .products-container
-                    each product in prods
-                        .card
-                            img(src="https://cdn.pixabay.com/photo/2016/11/19/16/01/audio-1840073_1280.jpg", alt="headphone")
-                            h3= product.name
-                            p.price= product.price
-                            p= product.description
-                            button Add to Cart
-        else 
-            h1 No Products available!                   
+block content
+  if prods.length > 0
+    .main-content
+      h2 My Product List
+
+      .products-container
+        each product in prods
+          .card
+            img(src="https://cdn.pixabay.com/photo/2016/11/19/16/01/audio-1840073_1280.jpg", alt=product.name)
+            h3= product.name
+            p.price= product.price
+            p= product.description
+            button Add to Cart
+  else 
+    h1 No Products available!

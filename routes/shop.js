@@ -26,11 +26,12 @@ router.get("/", (req, res) => {
    const products = adminData.products;
 
   res.render("shop", {
-    prods: products,
-    pageTitle: "Shop",    
-    hasProducts: products.length > 0,
-    shopCSS: true          
-  });
+  prods: products,
+  pageTitle: "Shop",
+  activePage: "shop",
+  shopCSS: true
+});
+
 
   console.log(products);
 });

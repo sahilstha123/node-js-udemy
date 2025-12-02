@@ -24,7 +24,7 @@ router.get("/", (req, res) => {
   // });
 
     const products = adminData.products;
-    res.render('shop',{prods:products,title:"shop"});
+    res.render('shop',{prods:products,title:"shop", hasProducts:products.length>0});
     
     console.log(products)
   });

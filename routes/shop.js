@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
   // res.sendFile(path.join(rootDir, "views", "shop.html"));
 
   // this is for using pug
-  
+
   // res.render("shop", {
   //   title: "My Shop",
   //   products: [
@@ -23,11 +23,17 @@ router.get("/", (req, res) => {
   //   ]
   // });
 
-    const products = adminData.products;
-    res.render('shop',{prods:products,title:"shop", hasProducts:products.length>0});
-    
-    console.log(products)
+   const products = adminData.products;
+
+  res.render("shop", {
+    prods: products,
+    pageTitle: "Shop",    
+    hasProducts: products.length > 0,
+    shopCSS: true          
   });
+
+  console.log(products);
+});
 
 
 
